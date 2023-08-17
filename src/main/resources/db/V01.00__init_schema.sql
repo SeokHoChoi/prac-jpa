@@ -1,0 +1,5 @@
+CREATE TABLE board (
+   `id` VARCHAR(36) PRIMARY KEY,
+   `created_at` DATETIME DEFAULT CURRENT_TIMESTAMP,
+   `title` VARCHAR(10) NOT NULL
+);
