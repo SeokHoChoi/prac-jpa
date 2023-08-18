@@ -58,23 +58,6 @@ public class CustomerService {
        Employee employee = employeeRepository.findByEmployeeNumber(customerRequestDto.getSalesRepEmployee()).orElseThrow(NotFoundException::new);
         customerRepository.save(findCustomer.compare(customerRequestDto, employee));
        return  CustomerResponseDto.from(findCustomer);
-
-        // 밑은 customerNumber path에 추가하기 전 코드임. 왜안됨???
-        //        // 요청객체에 맞는 empl 찾고..
-//        Employee employee =
-//                employeeRepository.findByEmployeeNumber
-//                        (customerRequestDto.getSalesRepEmployee()).orElseThrow(NotFoundException::new);
-//
-//        // 일단 바꿀 고객 찾고..
-//        Customer findCustomer =
-//                customerRepository.findByCustomerNumber(customerRequestDto.getCustomerNumber()).orElseThrow(NotFoundException::new);
-//
-//        // 찾은 고객에 대해 from2이용해서 customerRequestDto 내용으로 싸그리 변경후 save.
-//        return CustomerResponseDto.from(
-//                customerRepository.save(
-//                        findCustomer.from2(customerRequestDto, employee)
-//                )
-//        );
     }
 
     public CustomerResponseDto deleteCustomer(int customerNumber) {

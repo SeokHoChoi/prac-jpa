@@ -6,6 +6,9 @@ import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
 
+import java.math.BigDecimal;
+import java.math.BigInteger;
+
 @Entity
 @Getter
 @Setter
@@ -33,12 +36,12 @@ public class Product {
     @Column(name = "product_description", nullable = false, columnDefinition = "text")
     private String productDescription;
 
-    @Column(name = "quantity_in_stock", nullable = false)
+    @Column(name = "quantity_in_stock",columnDefinition = "SMALLINT", nullable = false)
     private int quantityInStock;
 
     @Column(name = "buy_price", nullable = false)
-    private Double buyPrice;
+    private BigDecimal buyPrice;
 
     @Column(name = "m_s_r_p", nullable = false)
-    private Double MSRP;
+    private BigDecimal MSRP;
 }

@@ -6,6 +6,8 @@ import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
 
+import java.time.LocalDate;
+import java.time.LocalDateTime;
 import java.util.Date;
 
 @Entity
@@ -20,13 +22,13 @@ public class Order {
     private int orderNumber;
 
     @Column(name = "order_date", nullable = false)
-    private Date orderDate;
+    private LocalDate orderDate;
 
     @Column(name = "required_date", nullable = false)
-    private Date requiredDate;
+    private LocalDate requiredDate;
 
     @Column(name = "shipped_date")
-    private Date shippedDate;
+    private LocalDate shippedDate;
 
     @Column(name = "status", nullable = false)
     private String status;

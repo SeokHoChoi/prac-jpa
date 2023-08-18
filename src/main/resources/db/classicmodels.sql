@@ -3,6 +3,7 @@ CREATE DATABASE /*!32312 IF NOT EXISTS*/`testboard` /*!40100 DEFAULT CHARACTER S
 USE `testboard`;
 
 /*Table structure for table `offices` */
+/*Table structure for table `offices` */
 
 DROP TABLE IF EXISTS `offices`;
 

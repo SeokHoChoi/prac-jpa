@@ -6,7 +6,8 @@ import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
 
-import java.util.Date;
+import java.math.BigDecimal;
+import java.time.LocalDate;
 
 @Entity
 @Getter
@@ -25,8 +26,8 @@ public class Payment {
     private String checkNumber;
 
     @Column(name = "payment_date", nullable = false)
-    private Date paymentDate;
+    private LocalDate paymentDate;
 
     @Column(name = "amount", nullable = false)
-    private Double amount;
+    private BigDecimal amount;
 }

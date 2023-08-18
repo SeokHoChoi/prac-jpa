@@ -1,7 +1,6 @@
 package com.example.testboard.entity;
 
-import jakarta.persistence.Column;
-import jakarta.persistence.Embeddable;
+import jakarta.persistence.*;
 import lombok.AllArgsConstructor;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
@@ -22,4 +21,16 @@ public class OrderDetailId implements Serializable {
 
     @Column(name = "product_code", length = 15)
     private String productCode;
+
+
+
+//    @ManyToOne(fetch = FetchType.EAGER)
+//    @MapsId("order_number")
+//    @JoinColumn(name = "order_number")
+//    private Order order;
+
+//    @ManyToOne(fetch = FetchType.EAGER)
+//    @MapsId("product_code")
+//    @JoinColumn(name = "product_code")
+//    private Product product;
 }

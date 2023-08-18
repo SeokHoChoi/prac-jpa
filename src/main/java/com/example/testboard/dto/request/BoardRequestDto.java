@@ -13,6 +13,5 @@ import java.util.UUID;
 @NoArgsConstructor
 @AllArgsConstructor
 public class BoardRequestDto {
-    // id는 그냥 생성할때는 자동이니 없어도 되고 수정에선 있어야하는데 어떡함?
     private String title;
 }

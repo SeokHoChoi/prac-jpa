@@ -6,6 +6,8 @@ import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
 
+import java.math.BigDecimal;
+
 @Entity
 @Getter
 @Setter
@@ -30,7 +32,7 @@ public class OrderDetail {
     private int quantityOrdered;
 
     @Column(name = "price_each", nullable = false)
-    private Double priceEach;
+    private BigDecimal priceEach;
 
     @Column(name = "order_line_number", nullable = false)
     private short orderLineNumber;

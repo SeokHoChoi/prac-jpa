@@ -13,7 +13,7 @@ import java.math.BigDecimal;
 @NoArgsConstructor
 @AllArgsConstructor
 public class CustomerRequestDto {
-    private int customerNumber; // db측에서 자동증가가 아니던데?? 왜이럼?
+    private int customerNumber;
     private String customerName;
     private String contactLastName;
     private String contactFirstName;

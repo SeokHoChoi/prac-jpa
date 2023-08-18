@@ -16,7 +16,6 @@ import java.math.BigDecimal;
 @NoArgsConstructor
 @Table(name = "customers")
 public class Customer {
-
     // get 안돼서 insertable = false, updatable = false 해결방법으로 요놈들 추가했으나안됨.
     //     @Column(name = "customerNumber", insertable = false, updatable = false) 이거 안됐음 yml에 추가해야했음.
     @Id
