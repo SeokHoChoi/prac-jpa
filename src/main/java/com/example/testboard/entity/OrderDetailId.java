@@ -1,6 +1,7 @@
 package com.example.testboard.entity;
 
 import jakarta.persistence.*;
+import lombok.AccessLevel;
 import lombok.AllArgsConstructor;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
@@ -10,11 +11,9 @@ import java.io.Serializable;
 
 @Getter
 @Setter
-@AllArgsConstructor
-@NoArgsConstructor
+@NoArgsConstructor(access = AccessLevel.PROTECTED)
 @Embeddable
 public class OrderDetailId implements Serializable {
-    private static final long serialVersionUID = 1L;
 
     @Column(name = "order_number")
     private int orderNumber;
@@ -22,15 +21,10 @@ public class OrderDetailId implements Serializable {
     @Column(name = "product_code", length = 15)
     private String productCode;
 
-
-
-//    @ManyToOne(fetch = FetchType.EAGER)
-//    @MapsId("order_number")
-//    @JoinColumn(name = "order_number")
-//    private Order order;
-
-//    @ManyToOne(fetch = FetchType.EAGER)
-//    @MapsId("product_code")
-//    @JoinColumn(name = "product_code")
-//    private Product product;
+    public static OrderDetailId from(int orderNumber, String productCode) {
+        OrderDetailId id = new OrderDetailId();
+        id.orderNumber = orderNumber;
+        id.productCode = productCode;
+        return id;
+    }
 }

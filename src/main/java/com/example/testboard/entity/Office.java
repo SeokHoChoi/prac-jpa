@@ -18,31 +18,28 @@ import lombok.Setter;
 public class Office {
 
     @Id
-    @Column(name = "office_code")
     private String officeCode;
 
-    @Column(name = "city", nullable = false)
+    @Column(nullable = false)
     private String city;
 
-    @Column(name = "phone", nullable = false)
+    @Column(nullable = false)
     private String phone;
 
-    @Column(name = "address_line1", nullable = false)
+    @Column(nullable = false)
     private String addressLine1;
 
-    @Column(name = "address_line2")
     private String addressLine2;
 
-    @Column(name = "state")
     private String state;
 
-    @Column(name = "country", nullable = false)
+    @Column(nullable = false)
     private String country;
 
-    @Column(name = "postal_code", nullable = false)
+    @Column(nullable = false)
     private String postalCode;
 
-    @Column(name = "territory", nullable = false)
+    @Column(nullable = false)
     private String territory;
 
 }

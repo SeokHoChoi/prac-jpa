@@ -37,11 +37,7 @@ public class CustomerService {
         // 굳이 리포지터리에서 Customer로 받아서 여기서 이렇게 from으로 변환하는게 맞나..?
         // 게다가 .map(CustomerResponseDto::from) 하려고 static으로 해놨는데
         // 여기서 그거때매 new해서 안하고 바로 . 찍어서 from을 쓰고있는데 잘하는짓인가.?
-        CustomerResponseDto customerResponseDto =
-                CustomerResponseDto.from(
-                        customerRepository.findById(customerNumber).orElseThrow(NotFoundException::new)
-                );
-        return customerResponseDto;
+        return CustomerResponseDto.from(customerRepository.findById(customerNumber).orElseThrow(NotFoundException::new));
     }
 
     public CustomerResponseDto createCustomer(CustomerRequestDto customerRequestDto) {

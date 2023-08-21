@@ -22,12 +22,11 @@ public class Payment {
     private Customer customer;
 
     @Id
-    @Column(name = "check_number")
     private String checkNumber;
 
-    @Column(name = "payment_date", nullable = false)
+    @Column(nullable = false)
     private LocalDate paymentDate;
 
-    @Column(name = "amount", nullable = false)
+    @Column(nullable = false)
     private BigDecimal amount;
 }

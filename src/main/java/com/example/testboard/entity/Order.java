@@ -1,14 +1,17 @@
 package com.example.testboard.entity;
 
-import jakarta.persistence.*;
+import jakarta.persistence.Column;
+import jakarta.persistence.Entity;
+import jakarta.persistence.Id;
+import jakarta.persistence.JoinColumn;
+import jakarta.persistence.ManyToOne;
+import jakarta.persistence.Table;
 import lombok.AllArgsConstructor;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
 
 import java.time.LocalDate;
-import java.time.LocalDateTime;
-import java.util.Date;
 
 @Entity
 @Getter
@@ -18,22 +21,20 @@ import java.util.Date;
 @Table(name = "orders")
 public class Order {
     @Id
-    @Column(name = "order_number")
     private int orderNumber;
 
-    @Column(name = "order_date", nullable = false)
+    @Column(nullable = false)
     private LocalDate orderDate;
 
-    @Column(name = "required_date", nullable = false)
+    @Column(nullable = false)
     private LocalDate requiredDate;
 
-    @Column(name = "shipped_date")
     private LocalDate shippedDate;
 
-    @Column(name = "status", nullable = false)
+    @Column(nullable = false)
     private String status;
 
-    @Column(name = "comments", columnDefinition = "text")
+    @Column(columnDefinition = "text")
     private String comments;
 
     @ManyToOne
