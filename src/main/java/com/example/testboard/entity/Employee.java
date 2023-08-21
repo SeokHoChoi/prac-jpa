@@ -1,6 +1,11 @@
 package com.example.testboard.entity;
 
-import jakarta.persistence.*;
+import jakarta.persistence.Column;
+import jakarta.persistence.Entity;
+import jakarta.persistence.Id;
+import jakarta.persistence.JoinColumn;
+import jakarta.persistence.ManyToOne;
+import jakarta.persistence.Table;
 import lombok.AllArgsConstructor;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
@@ -14,19 +19,18 @@ import lombok.Setter;
 @Table(name = "employees")
 public class Employee {
     @Id
-    @Column(name = "employee_number")
     private int employeeNumber;
 
-    @Column(name = "last_name", nullable = false)
+    @Column(nullable = false)
     private String lastName;
 
-    @Column(name = "first_name", nullable = false)
+    @Column(nullable = false)
     private String firstName;
 
-    @Column(name = "extension", nullable = false)
+    @Column(nullable = false)
     private String extension;
 
-    @Column(name = "email", nullable = false)
+    @Column(nullable = false)
     private String email;
 
     @ManyToOne
@@ -37,7 +41,7 @@ public class Employee {
     @JoinColumn(name = "reports_to")
     private Employee reportsTo;
 
-    @Column(name = "job_title", nullable = false)
+    @Column(nullable = false)
     private String jobTitle;
 
 }

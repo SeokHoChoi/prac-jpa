@@ -20,44 +20,22 @@ public class Customer {
     //     @Column(name = "customerNumber", insertable = false, updatable = false) 이거 안됐음 yml에 추가해야했음.
     @Id
 //    @GeneratedValue(strategy = GenerationType.IDENTITY)
-    @Column(name = "customer_number")
     private int customerNumber;
-
-    @Column(name = "customer_name", nullable = false)
     private String customerName;
-
-    @Column(name = "contact_last_name", nullable = false)
     private String contactLastName;
-
-    @Column(name = "contact_first_name", nullable = false)
     private String contactFirstName;
-
-    @Column(name = "phone", nullable = false)
     private String phone;
-
-    @Column(name = "address_line1", nullable = false)
     private String addressLine1;
-
-    @Column(name = "address_line2")
     private String addressLine2;
-
-    @Column(name = "city", nullable = false)
     private String city;
-
-    @Column(name = "state")
     private String state;
-
-    @Column(name = "postal_code")
     private String postalCode;
-
-    @Column(name = "country", nullable = false)
     private String country;
 
     @ManyToOne
     @JoinColumn(name = "sales_rep_employee_number")
     private Employee salesRepEmployee;
 
-    @Column(name = "credit_limit")
     private BigDecimal creditLimit;
 
     // 여긴 form 같은거 못만드나? 지금처럼 이래도 돼?
