@@ -26,7 +26,6 @@ public class Board {
     @JdbcTypeCode(SqlTypes.VARCHAR)
     private UUID id;
 
-    @Column(name="created_at")
     private LocalDateTime createdAt;
 
     @NotNull

@@ -2,6 +2,7 @@ package com.example.testboard.dto.response;
 
 import com.example.testboard.entity.Customer;
 import com.example.testboard.entity.Employee;
+import lombok.AccessLevel;
 import lombok.AllArgsConstructor;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
@@ -11,8 +12,7 @@ import java.math.BigDecimal;
 
 @Getter
 @Setter
-@NoArgsConstructor
-@AllArgsConstructor
+@NoArgsConstructor(access = AccessLevel.PRIVATE)
 public class CustomerResponseDto {
     // 모든 필드를 다 만든 이유는 응답해줄때 관련정보를 전부 넘겨주기 위해서임.
     // Entity랑 구조가 똑같이함. 이게 맞음?
@@ -28,7 +28,7 @@ public class CustomerResponseDto {
     private String state;
     private String postalCode;
     private String country;
-    private Employee salesRepEmployee;
+    private EmployeeResponseDto salesRepEmployee;
     private BigDecimal creditLimit;
 
     public static CustomerResponseDto from (Customer customer) {
@@ -44,7 +44,9 @@ public class CustomerResponseDto {
         customerResponseDto.setState(customer.getState());
         customerResponseDto.setPostalCode(customer.getPostalCode());
         customerResponseDto.setCountry(customer.getCountry());
-        customerResponseDto.setSalesRepEmployee(customer.getSalesRepEmployee());
+        if(customer.getSalesRepEmployee()!=null) {
+            customerResponseDto.setSalesRepEmployee(EmployeeResponseDto.from(customer.getSalesRepEmployee()));
+        }
         customerResponseDto.setCreditLimit(customer.getCreditLimit());
         return customerResponseDto;
     }

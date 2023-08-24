@@ -17,15 +17,10 @@ import lombok.Setter;
 @Table(name = "product_lines")
 public class ProductLine {
     @Id
-    @Column(name = "product_line")
     private String productLine;
-
-    @Column(name = "text_description")
     private String textDescription;
-
-    @Column(name = "html_description", columnDefinition = "mediumtext")
+    @Column(columnDefinition = "mediumtext")
     private String htmlDescription;
-
-    @Column(name = "image", columnDefinition = "mediumblob")
+    @Column(columnDefinition = "mediumblob")
     private byte[] image;
 }
